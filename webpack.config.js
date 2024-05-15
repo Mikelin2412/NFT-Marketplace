@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const pages = [
   "create_account",
   "connect_wallet",
+  "home_page",
   "artist_page",
   "marketplace",
   "nft_page",
@@ -17,12 +18,6 @@ const htmlWebpackPlugins = pages.map((page) => {
     chunks: [page],
     template: `./src/pages/${page}/index.html`,
   });
-});
-
-const mainPage = new HtmlWebpackPlugin({
-  filename: `./index.html`,
-  chunks: ['home_page'],
-  template: `./src/pages/home_page/index.html`,
 });
 
 module.exports = {
@@ -42,7 +37,6 @@ module.exports = {
   },
   plugins: [
     ...htmlWebpackPlugins,
-    mainPage,
     new MiniCssExtractPlugin({
       filename: "pages/[name]/style.css",
     }),
