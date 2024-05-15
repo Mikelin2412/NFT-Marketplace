@@ -1,0 +1,85 @@
+@import "../../utils/style-config.less";
+
+.text-params(@font-size, @font-weight, @line-height) {
+  font-size: @font-size;
+  font-weight: @font-weight;
+  line-height: @line-height;
+}
+
+.nft-card-block {
+  background-color: @background-secondary;
+  border-radius: 20px;
+
+  &__image {
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__description-container {
+    padding: 20px 30px 25px;
+
+    &__title {
+      margin-bottom: 5px;
+      .text-params(@h5, @semi-bold, 140%);
+    }
+
+    &__author-info {
+      display: flex;
+      margin-bottom: 25px;
+
+      &__avatar {
+        margin-right: 12px;
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+      }
+
+      &__name {
+        font-family: @space-mono;
+        .text-params(@base-body, @regular, 140%);
+      }
+    }
+
+    &__additional-info {
+      display: flex;
+      justify-content: space-between;
+
+      &__price {
+        &__title {
+          display: block;
+          margin-bottom: 8px;
+          font-family: @space-mono;
+          color: @caption-and-label-text;
+          .text-params(@caption, @regular, 110%);
+        }
+
+        &__value {
+          display: block;
+          font-family: @space-mono;
+          .text-params(@base-body, @regular, 140%);
+        }
+      }
+
+      &__highest-bid {
+        text-align: end;
+
+        &__title {
+          display: block;
+          margin-bottom: 8px;
+          font-family: @space-mono;
+          color: @caption-and-label-text;
+          .text-params(@caption, @regular, 110%);
+        }
+
+        &__value {
+          display: block;
+          font-family: @space-mono;
+          .text-params(@base-body, @regular, 140%);
+        }
+      }
+    }
+  }
+}
+
+.dark-card {
+  background-color: @main-bg-color;
+}

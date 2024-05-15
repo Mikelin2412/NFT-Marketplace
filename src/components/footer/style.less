@@ -1,0 +1,111 @@
+@import "../../utils/style-config.less";
+
+// Mixins
+.section-size(@max-width, @width, @margin) {
+  max-width: @max-width;
+  width: @width;
+  margin: @margin;
+}
+
+.text-params(@font-size, @font-weight, @line-height) {
+  font-size: @font-size;
+  font-weight: @font-weight;
+  line-height: @line-height;
+}
+
+// Styles
+.footer {
+  padding: 40px 0;
+  background-color: @background-secondary;
+  display: flex;
+  justify-content: center;
+
+  &__inner-container {
+    max-width: @max-width;
+  }
+
+  &__info-container {
+    margin: 0 31px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+
+    &__marketplace-info-block {
+      max-width: 238px;
+
+      &__images {
+        margin-top: 15px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      & > p {
+        color: @footer-text;
+        .text-params(@base-body, @regular, 140%);
+      }
+
+      & > p:not(:first-child) {
+        margin-top: 20px;
+      }
+
+      &-title {
+        display: flex;
+
+        & > img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      &-title > img {
+        margin-right: 12px;
+      }
+
+      &-title > h5 {
+        font-family: @space-mono;
+        .text-params(@h5, @bold, 160%);
+      }
+    }
+
+    &__explore-block {
+      & > p {
+        color: @footer-text;
+        .text-params(@base-body, @regular, 140%);
+      }
+
+      & > p:not(:first-child) {
+        margin-top: 20px;
+      }
+
+      &-title > h5 {
+        font-family: @space-mono;
+        .text-params(@h5, @bold, 160%);
+      }
+    }
+
+    &__subscribe-block {
+      & > p {
+        color: @footer-text;
+        .text-params(@base-body, @regular, 140%);
+      }
+
+      &-title > h5 {
+        font-family: @space-mono;
+        .text-params(@h5, @bold, 160%);
+      }
+    }
+  }
+
+  &__copyright-container {
+    margin-top: 30px;
+    border-top: 1px solid @footer-text;
+
+    & > span {
+      display: block;
+      padding-top: 20px;
+      .text-params(@caption, @regular, 110%);
+      color: @footer-text;
+    }
+  }
+}
