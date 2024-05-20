@@ -83,24 +83,38 @@
       }
     }
   }
+}
 
-  .filled-button {
-    .button-base(@call-to-action, @call-to-action);
-    color: @text !important;
-  }
+.filled-button {
+  .button-base(@call-to-action, @call-to-action);
+  color: @text !important;
+  cursor: pointer;
+  transition: all .3s;
+}
 
-  .outlined-button {
-    .button-base(inherit, @call-to-action);
-  }
+.filled-button:hover {
+  background-color: #9849ff;
+}
 
-  .auth-button__icon {
-    width: 20px;
-    height: 20px;
-  }
+.outlined-button {
+  .button-base(inherit, @call-to-action);
+  cursor: pointer;
+  transition: all .3s;
+}
 
-  .sign-up-button {
-    padding: 19px 30px;
-  }
+.outlined-button:hover {
+  background-color: #a259ff;
+}
+
+.auth-button__icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.sign-up-button {
+  padding: 19px 30px;
+  cursor: pointer;
 }
 
 .burger-menu {
@@ -278,6 +292,8 @@
       align-items: center;
       padding: 14px 0 10px;
       cursor: pointer;
+      transition: all .3s;
+      border-bottom: 2px solid @main-bg-color;
 
       &__name {
         margin-right: 16px;
@@ -292,6 +308,10 @@
         font-family: @space-mono;
         .text-params(@base-body, @regular, 140%);
       }
+    }
+
+    &__category-block:hover {
+      border-bottom: 2px solid @caption-and-label-text;
     }
 
     &__category-block.active-tab {
@@ -341,6 +361,10 @@
         display: flex;
         gap: 10px;
         align-items: center;
+
+        & > img {
+          cursor: pointer;
+        }
       }
 
       & > p {
@@ -375,9 +399,14 @@
 
     &__explore-block {
       & > p {
+        cursor: pointer;
         color: @footer-text;
         .text-params(@base-body, @regular, 140%);
         transition: color @change-theme;
+      }
+
+      & > p:hover {
+        color: @caption-and-label-text;
       }
 
       & > p:not(:first-child) {
@@ -425,7 +454,8 @@
 .nft-card-block {
   background-color: @background-secondary;
   border-radius: 20px;
-  transition: background-color @change-theme;
+  transition: all @change-theme;
+  cursor: pointer;
 
   &__image {
     border-radius: 20px 20px 0 0;
@@ -497,6 +527,11 @@
       }
     }
   }
+}
+
+.nft-card-block:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.35);
 }
 
 @media screen and (min-width: @sizes[tablet]) and (max-width: 1200px) {

@@ -90,18 +90,24 @@ const changeTheme = () => {
   const marketplaceSection = document.querySelector(".marketplace-section");
   marketplaceSection.classList.toggle("light-mode");
 
-  const marketplaceSectionMenu = document.querySelector(".marketplace-section-menu");
+  const marketplaceSectionMenu = document.querySelector(
+    ".marketplace-section-menu"
+  );
   marketplaceSectionMenu.classList.toggle("light-mode");
 
   const marketplaceSectionTabText = document.querySelectorAll(
     ".marketplace-section-menu__category-block > h5"
   );
-  marketplaceSectionTabText.forEach((card) => card.classList.toggle("light-mode"));
+  marketplaceSectionTabText.forEach((card) =>
+    card.classList.toggle("light-mode")
+  );
 
   const marketplaceSectionTabNumber = document.querySelectorAll(
     ".marketplace-section-menu__category-block__value"
   );
-  marketplaceSectionTabNumber.forEach((number) => number.classList.toggle("light-mode"));
+  marketplaceSectionTabNumber.forEach((number) =>
+    number.classList.toggle("light-mode")
+  );
 };
 
 document.addEventListener("DOMContentLoaded", () => {

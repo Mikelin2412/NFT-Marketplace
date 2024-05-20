@@ -132,9 +132,7 @@ const changeTheme = () => {
   );
   footerCopyrightText.classList.toggle("light-mode");
 
-  const contacts = document.querySelector(
-    ".contacts-section__widget"
-  );
+  const contacts = document.querySelector(".contacts-section__widget");
   contacts.classList.toggle("light-mode");
 
   const sideMenu = document.querySelector(".header__container__navigation");
@@ -142,7 +140,7 @@ const changeTheme = () => {
 
   const burgerMenu = document.querySelector(".burger-menu");
   burgerMenu.classList.toggle("light-mode");
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("theme") === "light") {

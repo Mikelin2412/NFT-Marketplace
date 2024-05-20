@@ -82,24 +82,38 @@
       }
     }
   }
+}
 
-  .filled-button {
-    .button-base(@call-to-action, @call-to-action);
-    color: @text !important;
-  }
+.filled-button {
+  .button-base(@call-to-action, @call-to-action);
+  color: @text !important;
+  cursor: pointer;
+  transition: all .3s;
+}
 
-  .outlined-button {
-    .button-base(inherit, @call-to-action);
-  }
+.filled-button:hover {
+  background-color: #9849ff;
+}
 
-  .auth-button__icon {
-    width: 20px;
-    height: 20px;
-  }
+.outlined-button {
+  .button-base(inherit, @call-to-action);
+  cursor: pointer;
+  transition: all .3s;
+}
 
-  .sign-up-button {
-    padding: 19px 30px;
-  }
+.outlined-button:hover {
+  background-color: #a259ff;
+}
+
+.auth-button__icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.sign-up-button {
+  padding: 19px 30px;
+  cursor: pointer;
 }
 
 .burger-menu {
@@ -276,7 +290,8 @@
     border-radius: 20px;
     display: flex;
     align-items: center;
-    transition: background-color @change-theme;
+    transition: all @change-theme;
+    cursor: pointer;
 
     &__number {
       min-width: 30px;
@@ -311,6 +326,11 @@
     &__volume {
       .text-params(@base-body, @regular, 140%);
     }
+  }
+
+  &__card:hover {
+    transform:translateY(-5px);
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.35);
   }
 }
 
@@ -355,6 +375,10 @@
         display: flex;
         gap: 10px;
         align-items: center;
+
+        & > img {
+          cursor: pointer;
+        }
       }
 
       & > p {
@@ -389,9 +413,14 @@
 
     &__explore-block {
       & > p {
+        cursor: pointer;
         color: @footer-text;
         .text-params(@base-body, @regular, 140%);
         transition: color @change-theme;
+      }
+
+      & > p:hover {
+        color: @caption-and-label-text;
       }
 
       & > p:not(:first-child) {

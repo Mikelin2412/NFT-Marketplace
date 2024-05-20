@@ -68,7 +68,7 @@ const changeTheme = () => {
 
   const rankActiveTab = document.querySelectorAll(".rank-active-tab");
   rankActiveTab.forEach((tab) => tab.classList.toggle("light-mode"));
-}
+};
 
 burger.addEventListener("click", () => {
   if (burger.classList.contains("active")) {
