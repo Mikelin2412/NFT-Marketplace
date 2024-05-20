@@ -537,6 +537,7 @@ html {
   background-color: #2b2b2b;
   transition: all 0.3s;
   cursor: pointer;
+  animation: border-animation 10s linear infinite;
 }
 @media screen and (min-width: 768px) and (max-width: 1200px) {
   .hero-section__right-container {
@@ -578,23 +579,35 @@ html {
   line-height: 140%;
 }
 .hero-section__right-container:hover {
-  animation: border-animation 3s infinite;
+  transform: scale(1.02) rotate(-0.3deg);
 }
 @keyframes border-animation {
   0% {
-    box-shadow: 0px 0px 20px rgba(162, 89, 255, 0.35);
+    box-shadow: -15px -15px 35px rgba(161, 89, 255, 0.5);
+  }
+  12.5% {
+    box-shadow: 0px -15px 25px rgba(52, 211, 121, 0.5);
   }
   25% {
-    box-shadow: 0px 0px 20px rgba(52, 211, 121, 0.35);
+    box-shadow: 15px -15px 35px rgba(211, 198, 52, 0.5);
+  }
+  37.5% {
+    box-shadow: 15px 0px 25px rgba(211, 52, 52, 0.5);
   }
   50% {
-    box-shadow: 0px 0px 20px rgba(211, 198, 52, 0.35);
+    box-shadow: 15px 15px 35px rgba(89, 255, 89, 0.5);
+  }
+  62.5% {
+    box-shadow: 0px 15px 25px rgba(89, 255, 236, 0.5);
   }
   75% {
-    box-shadow: 0px 0px 20px rgba(211, 198, 52, 0.35);
+    box-shadow: -15px 15px 35px rgba(89, 175, 255, 0.5);
+  }
+  87.5% {
+    box-shadow: -15px 0px 25px rgba(89, 92, 255, 0.5);
   }
   100% {
-    box-shadow: 0px 0px 20px rgba(162, 89, 255, 0.35);
+    box-shadow: -15px -15px 35px rgba(162, 89, 255, 0.5);
   }
 }
 .trending-collection-section {
